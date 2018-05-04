@@ -1,0 +1,8 @@
+<div>
+  <h3>Customers List</h3>
+  <ul>
+    <li *ngFor="let customer of customersList" >
+      <nav><a [routerLink]="['/customers/customer-details', customer.id]" >{{ customer.name }}</a></nav>
+    </li>
+  </ul>
+</div>

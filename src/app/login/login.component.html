@@ -1,0 +1,17 @@
+<div fxLayout="column" >
+  <div [fxLayout]="direction" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutGap="15px" style="position: fixed;top: 30%;left: 40%;" >
+      <div fxLayout="row" fxLayoutAlign="space-around center" >
+        <label for="loginId">Login ID:</label>
+        <input type="email" class="form-control" [(ngModel)]="userId" />
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around center" >
+        <label for="password">Password:</label>
+        <input type="password" [(ngModel)]="password" />
+      </div>
+      <div fxLayout="column centre">
+        <input type="button" value="Login" (click)="onLogin()" />
+      </div>
+    </div>
+  </div>
+</div>
