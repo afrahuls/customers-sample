@@ -1,0 +1,37 @@
+<!-- <div>
+  <div>
+    <div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+ -->
+
+
+
+
+
+
+
+
+<div fxLayout="column">
+    <div [fxLayout]="direction" fxLayoutAlign="centre centre" fxLayout="column"
+      fxLayoutGap="15px" style="position: fixed;top: 30%;left: 40%;" >
+      <div>
+          <div fxLayout="row" fxLayoutAlign="space-around centre" >
+          <label for="name">Name:</label>
+          <input type="text" [(ngModel)]="customerName"/>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-around centre" >
+          <label for="description">Description:</label>
+          <input type="text" [(ngModel)]="description"/>
+        </div>
+        <div>
+          <button (click)="addCustomer()" >Submit</button>
+        </div>
+      </div>
+    </div>
+</div>

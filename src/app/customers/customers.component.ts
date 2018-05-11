@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomersService } from '../services/customers.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customers',
@@ -10,13 +11,19 @@ export class CustomersComponent implements OnInit {
   customers: any;
   customersList: any = [];
 
-  constructor() { }
+  constructor(private router: Router, private customerService: CustomersService) { }
 
   ngOnInit() {
-    this.customers = new CustomersService();
-    this.customersList = this.customers.getCustomersList();
-    console.log("customers list ===== ",this.customersList);
-    
+    console.log('loading==========');
+    this.customerService.getCustomersList()
+      .subscribe(data => this.customersList = data,
+        err => console.error(err),
+        () => console.log('done loading foods'));
+    // console.log('######### ', this.customersList);
+  }
+
+  addCustomer() {
+    this.router.navigate(['customers/add-customer']);
   }
 
 }
